@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 22px); /* Adjusted width to accommodate padding and border */
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Personal Information</h2>
+
+    <form id="personalInfoForm" action="/" method="POST">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="birthYear">Birth Year:</label>
+        <input type="text" id="birthYear" name="birthYear">
+
+        <label for="currentAge">Current Age:</label>
+        <input type="text" id="currentAge" name="currentAge">
+
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender">
+
+        <label for="profession">Profession:</label>
+        <input type="text" id="profession" name="profession">
+
+        <h2>Family and Dependents</h2>
+
+        <label for="maritalStatus">Marital Status:</label>
+        <input type="text" id="maritalStatus" name="maritalStatus">
+
+        <label for="spouseName">Spouse Name:</label>
+        <input type="text" id="spouseName" name="spouseName">
+
+        <label for="spouseGender">Spouse Gender:</label>
+        <input type="text" id="spouseGender" name="spouseGender">
+
+        <label for="spouseBirthYear">Spouse Birth Year:</label>
+        <input type="text" id="spouseBirthYear" name="spouseBirthYear">
+
+        <label for="spouseCurrentAge">Spouse Current Age:</label>
+        <input type="text" id="spouseCurrentAge" name="spouseCurrentAge">
+
+        <label for="spouseProfession">Spouse Profession:</label>
+        <input type="text" id="spouseProfession" name="spouseProfession">
+
+        <label for="childrenDependents">Children as Dependents (Yes/No):</label>
+        <input type="text" id="childrenDependents" name="childrenDependents">
+
+        <label for="numberOfChildren">Number of Children:</label>
+        <input type="text" id="numberOfChildren" name="numberOfChildren">
+
+        <label for="child1BirthYear">Child 1 Birth Year:</label>
+        <input type="text" id="child1BirthYear" name="child1BirthYear">
+
+        <label for="child1Age">Child 1 Age:</label>
+        <input type="text" id="child1Age" name="child1Age">
+
+        <label for="child2BirthYear">Child 2 Birth Year:</label>
+        <input type="text" id="child2BirthYear" name="child2BirthYear">
+
+        <label for="child2Age">Child 2 Age:</label>
+        <input type="text" id="child2Age" name="child2Age">
+
+        <label for="otherDependents">Other Dependents (Yes/No):</label>
+        <input type="text" id="otherDependents" name="otherDependents">
+
+        <label for="totalDependents">Total Dependents:</label>
+        <input type="text" id="totalDependents" name="totalDependents">
+
+        <input type="submit" value="Submit">
+    </form>
+
+   <!-- <div id="personalInfoTable"></div> -->
+</div>
+
+<!-- <script>
+    document.getElementById('personalInfoForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Get form data
+        const formData = new FormData(event.target);
+
+        // Create HTML table with user input
+        const tableHTML = `
+            <h2>Personal Information</h2>
+            <table>
+                <tr>
+                    <th>Details</th>
+                    <th>Information</th>
+                </tr>
+                ${Array.from(formData.entries()).map(entry => `<tr><td>${entry[0]}</td><td>${entry[1]}</td></tr>`).join('')}
+            </table>`;
+
+        // Display the table
+        document.getElementById('personalInfoTable').innerHTML = tableHTML;
+    });
+</script> -->
+
+</body>
+</html>
